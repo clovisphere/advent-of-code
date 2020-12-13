@@ -35,6 +35,8 @@ func decode(upperLimit int, pattern, lowerHalf, upperHalf string) int {
 	return lower
 }
 
+// Learned this approach from Liz Fong-Jones
+// See: https://github.com/lizthegrey/adventofcode/blob/main/2020/day05.go
 func decode2(pattern string) int {
 	bitMapping := map[string]string{"B": "1", "R": "1", "F": "0", "L": "0"}
 	for k, v := range bitMapping {
