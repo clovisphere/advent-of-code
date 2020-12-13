@@ -25,7 +25,7 @@ func decode(upperLimit int, pattern, lowerHalf, upperHalf string) int {
 	lower := 0
 	upper := upperLimit
 	for _, letter := range pattern {
-		mid := int(math.Floor(float64(lower+upper) / 2.0)) // trick for ninary search
+		mid := int(math.Floor(float64(lower+upper) / 2.0)) // trick for binary search
 		if string(letter) == lowerHalf {
 			upper = mid
 		} else if string(letter) == upperHalf {
