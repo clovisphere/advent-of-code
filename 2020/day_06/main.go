@@ -51,7 +51,7 @@ func getYesAnswers2(data string) int {
 	return total
 }
 
-// starts programn execution
+// starts program execution
 func main() {
 	flag.Parse() // NOTE: to parse command-line arguments/flags:-)
 	data, err := extractData(*inputFile)
