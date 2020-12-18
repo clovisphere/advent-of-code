@@ -32,15 +32,39 @@ func getYesAnswers(data string) int {
 	return len(set)
 }
 
+func getYesAnswers2(data string) int {
+	var total int
+	rows := strings.Split(data, "\n")
+	questions := make(map[string]int)
+	for _, row := range rows {
+		col := strings.Split(row, "")
+		for _, val := range col {
+			questions[val]++
+		}
+	}
+	// how many questions did everyone answer "yes" to
+	for _, m := range questions {
+		if m == len(rows) {
+			total++
+		}
+	}
+	return total
+}
+
 // starts programn execution
 func main() {
+	flag.Parse() // NOTE: to parse command-line arguments/flags:-)
 	data, err := extractData(*inputFile)
 	if err != nil {
 		panic(err)
 	}
 	total := 0
 	for _, line := range data {
-		total += getYesAnswers(line)
+		if *partTwo {
+			total += getYesAnswers2(line)
+		} else {
+			total += getYesAnswers(line)
+		}
 	}
 	fmt.Printf("What is the sum of those counts? %d\n", total)
 }
