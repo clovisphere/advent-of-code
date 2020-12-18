@@ -19,7 +19,7 @@ func extractData(filename string) ([]string, error) {
 	return strings.Split(strings.TrimSpace(string(b)), "\n"), nil
 }
 
-// starts programn execution
+// starts program execution
 func main() {
 	flag.Parse()
 	data, err := extractData(*inputFile)
