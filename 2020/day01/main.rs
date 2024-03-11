@@ -1,4 +1,4 @@
-const SUM: i32 = 2020;
+const TARGET: i32 = 2020;
 
 fn main() {
     let mut xs: Vec<i32> = std::fs::read_to_string("input.txt")
@@ -16,7 +16,7 @@ fn main() {
 fn part01(xs: &[i32]) -> Option<i32> {
     let n = xs.len();
     for i in 0..n {
-        if let Ok(j) = xs.binary_search(&(SUM - xs[i])) {
+        if let Ok(j) = xs.binary_search(&(TARGET - xs[i])) {
             if i != j {
                 return Some(xs[i] * xs[j]);
             }
@@ -29,7 +29,7 @@ fn part02(xs: &[i32]) -> Option<i32> {
     let n = xs.len();
     for i in 0..n {
         for j in i + 1..n {
-            if let Ok(k) = xs.binary_search(&(SUM - xs[i] - xs[j])) {
+            if let Ok(k) = xs.binary_search(&(TARGET - xs[i] - xs[j])) {
                 if j != k {
                     return Some(xs[i] * xs[j] * xs[k]);
                 }
