@@ -4,13 +4,14 @@ import std.file : readText;
 import std.stdio;
 import std.string;
 
-string[] REQUIRED_KEYS = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
 
 struct Field { string key; string value;}
 
 bool is_valid(Field[] fields) {
+    auto required_keys =
+        ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
     auto keys = fields.map!(field => field.key).array;
-    foreach(key; REQUIRED_KEYS)
+    foreach(key; required_keys)
         if(!keys.canFind(key)) return false;
     return true;
 }
