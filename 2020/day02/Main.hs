@@ -31,5 +31,15 @@ isCorrectV2 (Row c (low, high) password) = (a == c) /= (b == c)
     where a = password !! (low - 1)
           b = password !! (high - 1)
 
+countValidPasswords :: (Row -> Bool) -> [Row] -> Int
+countValidPasswords predicate rows = length (filter predicate rows)
+
+--main :: IO ()
+--main = interact $ (++ "\n") . show . length . filter isCorrectV2 . map rowFromString . lines
+
 main :: IO ()
-main = interact $ (++ "\n") . show . length . filter isCorrectV2 . map rowFromString . lines
+main = do
+    input <- getContents
+    let rows = map rowFromString (lines input)
+    putStrLn $ "part 01: " ++ show (countValidPasswords isCorrectV1 rows)
+    putStrLn $ "part 02: " ++ show (countValidPasswords isCorrectV2 rows)
