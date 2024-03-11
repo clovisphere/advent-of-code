@@ -1,5 +1,3 @@
-# Makefile for a Haskell project
-
 # Compiler and flags
 GHC = ghc
 GHCFLAGS = -Wall -fno-warn-incomplete-uni-patterns
