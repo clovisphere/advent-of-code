@@ -4,7 +4,7 @@
 
 1. [x] [Day 1](./day01) - [Rust](https://www.rust-lang.org/)
 2. [x] [Day 2](./day02) - [Haskel](https://www.haskell.org/)
-3. [x] [Day 3](./day03) - [Java](https://www.oracle.com/ke/java/)
+3. [x] [Day 3](./day03) - [Java](https://www.oracle.com/java/technologies/java-se-glance.html)
 4. [ ] [Day 4](./day04) - [D](https://dlang.org/)
 
 ## ❗️IMPORTANT
