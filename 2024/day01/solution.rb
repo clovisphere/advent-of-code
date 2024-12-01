@@ -16,7 +16,7 @@ part_one = data
            .map { _1.split.map(&:to_i) }
            .transpose
            .map(&:sort)
-           .reduce(:zip)
+           .reduce(:zip)               # or: .transpose
            .sum { |a, b| (a - b).abs } # or: .map { _1.reduce(:-).abs }.sum
 
 # Part 2
